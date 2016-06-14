@@ -10,9 +10,15 @@ class nvim_config {
     source       => "puppet:///modules/nvim_config/nvim",
   }
 
-  vcsrepo { "/home/$id/git/":
+  vcsrepo { "/home/$id/gitRepos/my/dotfiles":
     ensure   => present,
     provider => git,
     source   => 'git@github.com:jjjeykey/dotfiles.git',
+  }
+
+  vcsrepo { "/home/$id/gitRepos/my/puppet":
+    ensure   => present,
+    provider => git,
+    source   => 'git@github.com:jjjeykey/.puppet.git',
   }
 }

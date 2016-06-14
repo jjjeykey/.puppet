@@ -19,6 +19,8 @@ $desiredPackages = [
   'rbenv', # switch easily between ruby versions
   'tidy', # html syntax checker + reformatter
   'ksshaskpass', # for git to ask for password
+  'puppet-module-puppetlabs-vcsrepo', # module for git etc. in puppet
+  'trash-cli', # alternative to rm that uses trash bin
 ]
 
 $undesiredPackages = ['vim', 'vim-gnome']
