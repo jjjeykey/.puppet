@@ -9,4 +9,10 @@ class nvim_config {
     recurselimit => 1,
     source       => "puppet:///modules/nvim_config/nvim",
   }
+
+  vcsrepo { "/home/$id/git/":
+    ensure   => present,
+    provider => git,
+    source   => 'git@github.com:jjjeykey/dotfiles.git',
+  }
 }

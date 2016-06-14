@@ -17,7 +17,8 @@ $desiredPackages = [
   'tmux',
   'shellcheck', # bash checkstyle
   'rbenv', # switch easily between ruby versions
-  'tidy' # html syntax checker + reformatter
+  'tidy', # html syntax checker + reformatter
+  'ksshaskpass', # for git to ask for password
 ]
 
 $undesiredPackages = ['vim', 'vim-gnome']
