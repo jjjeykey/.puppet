@@ -8,5 +8,4 @@ class vim_config {
     recurse => true,
     source => "puppet:///modules/nvim_config/.vim",
   }
-
 }
