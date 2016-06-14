@@ -1,4 +1,4 @@
-$mainUser = "alexishevia"
+$mainUser = "jakob"
 
 $desiredPackages = [
   'curl',
