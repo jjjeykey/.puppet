@@ -1,4 +1,4 @@
-include vim_config
+include nvim_config
 include git_config
 include ack_config
 include postgres_config

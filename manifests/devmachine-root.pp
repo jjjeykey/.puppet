@@ -1,4 +1,4 @@
-$mainUser = "alexishevia"
+$mainUser = "jakob"
 
 $desiredPackages = [
   'curl',
@@ -9,28 +9,18 @@ $desiredPackages = [
   'ack-grep',
   'ncurses-term',
   'xclip',
-  'dconf-tools',
   'unzip',
-  'libjpeg62',
-  'libwebkitgtk-1.0-0',
   'unrar',
-  'compizconfig-settings-manager',
   's3cmd',
-  'gnome-do',
-  'gnome-do-plugins',
-  'compiz-plugins',
-  'sni-qt:i386',
-  'gcolor2',
-  'screenruler',
-  'vim-gtk',
   'android-tools-adb',
   'android-tools-fastboot',
   'tmux',
-  'rbenv',
-  'tidy'
+  'shellcheck', # bash checkstyle
+  'rbenv', # switch easily between ruby versions
+  'tidy' # html syntax checker + reformatter
 ]
 
-$undesiredPackages = ['avahi-daemon', 'vim', 'vim-gnome', 'terminator']
+$undesiredPackages = ['vim', 'vim-gnome']
 
 package { $desiredPackages:
   ensure => installed
