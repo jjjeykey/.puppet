@@ -10,15 +10,14 @@ class nvim_config {
     source       => "puppet:///modules/nvim_config/nvim",
   }
 
-  vcsrepo { "/home/$id/gitRepos/my/dotfiles":
-    ensure   => present,
-    provider => git,
-    source   => 'git@github.com:jjjeykey/dotfiles.git',
-  }
+  $myGitRepos = ["dotfiles", ".puppet"]
 
-  vcsrepo { "/home/$id/gitRepos/my/puppet":
-    ensure   => present,
-    provider => git,
-    source   => 'git@github.com:jjjeykey/.puppet.git',
+# function call with lambda:
+  $myGitRepos.each |String $repo| {
+    vcsrepo { "/home/$id/gitRepos/my/$repo":
+      ensure   => present,
+      provider => git,
+      source   => 'git@github.com:jjjeykey/$repo.git',
+    }
   }
 }
