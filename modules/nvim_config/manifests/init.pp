@@ -1,4 +1,4 @@
-class vim_config {
+class nvim_config {
 
   file { "/home/$id/.config/nvim":
     owner => "$id",
