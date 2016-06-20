@@ -1,23 +1,20 @@
 class nvim_config {
 
-  file { "/home/$id/.config/nvim":
-    owner        => "$id",
-    group        => "$id",
-    mode         => "755",
-    ensure       => link,
-    recurse      => true,
-    recurselimit => 1,
-    source       => "puppet:///modules/nvim_config/nvim",
-  }
+  #file { "/home/$id/.config/nvim":
+    #owner        => "$id",
+    #group        => "$id",
+    #mode         => "755",
+    #ensure       => link,
+    #recurse      => true,
+    #recurselimit => 1,
+    #source       => "puppet:///modules/nvim_config/nvim",
+  #}
 
-  $myGitRepos = ["dotfiles", "myPuppet"]
-
-# function call with lambda:
-  $myGitRepos.each |String $repo| {
-    vcsrepo { "/home/$id/gitRepos/my/$repo":
-      ensure   => present,
+# VIM Dot Files
+  vcsrepo { 'vim-dotfiles':
+      path     => "/home/$id/.config/nvim",
+      ensure   => mirror,
       provider => git,
-      source   => "git@github.com:jjjeykey/$repo.git",
-    }
+      source   => "git@github.com:jjjeykey/vimDotfiles.git"
   }
 }

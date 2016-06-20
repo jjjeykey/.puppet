@@ -20,4 +20,12 @@
 ## add the key to the agent
 # ssh-add ~/.ssh/id_rsa
 
+###################################################
+# use cron to auto sync git repos (git repo must be downloaded with mirror option)
+###################################################
+# sudo vi /etc/cron.d/sync_git_repos
+# */5 * * * * app cd /path/to/project.git && git fetch -q --all -p
+
+
+
 puppet module install puppetlabs-vcsrepo
